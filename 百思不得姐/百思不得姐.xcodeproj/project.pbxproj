@@ -234,6 +234,11 @@
 		BC76542D1DE2D02700E4CA06 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76542C1DE2D02700E4CA06 /* NewsViewController.m */; };
 		BC7654301DE2D05B00E4CA06 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76542F1DE2D05B00E4CA06 /* AttentionViewController.m */; };
 		BC7654331DE2D07600E4CA06 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7654321DE2D07600E4CA06 /* ProfileViewController.m */; };
+		BC7654391DE2D5C900E4CA06 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7654381DE2D5C900E4CA06 /* AddViewController.m */; };
+		BC76543C1DE2D72800E4CA06 /* BDJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76543B1DE2D72800E4CA06 /* BDJTabBarController.m */; };
+		BC7654431DE2DF1800E4CA06 /* UIButton+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7654421DE2DF1800E4CA06 /* UIButton+Util.m */; };
+		BC7654471DE2E25B00E4CA06 /* BDJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7654461DE2E25B00E4CA06 /* BDJTabBar.m */; };
+		BC76544D1DE2E82100E4CA06 /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76544C1DE2E82100E4CA06 /* UIView+Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -495,6 +500,18 @@
 		BC76542F1DE2D05B00E4CA06 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		BC7654311DE2D07600E4CA06 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		BC7654321DE2D07600E4CA06 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		BC7654371DE2D5C900E4CA06 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		BC7654381DE2D5C900E4CA06 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		BC76543A1DE2D72800E4CA06 /* BDJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJTabBarController.h; sourceTree = "<group>"; };
+		BC76543B1DE2D72800E4CA06 /* BDJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJTabBarController.m; sourceTree = "<group>"; };
+		BC7654411DE2DF1800E4CA06 /* UIButton+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Util.h"; sourceTree = "<group>"; };
+		BC7654421DE2DF1800E4CA06 /* UIButton+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Util.m"; sourceTree = "<group>"; };
+		BC7654441DE2E1BC00E4CA06 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		BC7654451DE2E25B00E4CA06 /* BDJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJTabBar.h; sourceTree = "<group>"; };
+		BC7654461DE2E25B00E4CA06 /* BDJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJTabBar.m; sourceTree = "<group>"; };
+		BC76544B1DE2E82100E4CA06 /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
+		BC76544C1DE2E82100E4CA06 /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
+		BC76544E1DE2E97700E4CA06 /* BDJconst1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJconst1.h; sourceTree = "<group>"; };
 		E32A02CE226661F0B927A382 /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -611,6 +628,7 @@
 		BC76525B1DE2C9CA00E4CA06 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC7654401DE2DEBC00E4CA06 /* category(类别) */,
 				BC76526D1DE2C9CA00E4CA06 /* Profile */,
 				BC7652691DE2C9CA00E4CA06 /* News */,
 				BC7652651DE2C9CA00E4CA06 /* Essence(精华) */,
@@ -635,6 +653,8 @@
 		BC76525D1DE2C9CA00E4CA06 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC7654371DE2D5C900E4CA06 /* AddViewController.h */,
+				BC7654381DE2D5C900E4CA06 /* AddViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -691,6 +711,14 @@
 			children = (
 				BC7654251DE2CFDC00E4CA06 /* BaseViewController.h */,
 				BC7654261DE2CFDC00E4CA06 /* BaseViewController.m */,
+				BC76543A1DE2D72800E4CA06 /* BDJTabBarController.h */,
+				BC76543B1DE2D72800E4CA06 /* BDJTabBarController.m */,
+				BC7654451DE2E25B00E4CA06 /* BDJTabBar.h */,
+				BC7654461DE2E25B00E4CA06 /* BDJTabBar.m */,
+				BC76544B1DE2E82100E4CA06 /* UIView+Util.h */,
+				BC76544C1DE2E82100E4CA06 /* UIView+Util.m */,
+				BC76544E1DE2E97700E4CA06 /* BDJconst1.h */,
+				BC7654441DE2E1BC00E4CA06 /* PrefixHeader.pch */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1084,6 +1112,15 @@
 				BC76534E1DE2CA3600E4CA06 /* tabBar_publish_icon@3x.png */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BC7654401DE2DEBC00E4CA06 /* category(类别) */ = {
+			isa = PBXGroup;
+			children = (
+				BC7654411DE2DF1800E4CA06 /* UIButton+Util.h */,
+				BC7654421DE2DF1800E4CA06 /* UIButton+Util.m */,
+			);
+			path = "category(类别)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1480,13 +1517,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7654431DE2DF1800E4CA06 /* UIButton+Util.m in Sources */,
+				BC76544D1DE2E82100E4CA06 /* UIView+Util.m in Sources */,
+				BC7654391DE2D5C900E4CA06 /* AddViewController.m in Sources */,
 				BC7652301DE2C78500E4CA06 /* ViewController.m in Sources */,
 				BC7654271DE2CFDC00E4CA06 /* BaseViewController.m in Sources */,
 				BC7654331DE2D07600E4CA06 /* ProfileViewController.m in Sources */,
 				BC76522D1DE2C78500E4CA06 /* AppDelegate.m in Sources */,
+				BC7654471DE2E25B00E4CA06 /* BDJTabBar.m in Sources */,
 				BC76542D1DE2D02700E4CA06 /* NewsViewController.m in Sources */,
 				BC7654301DE2D05B00E4CA06 /* AttentionViewController.m in Sources */,
 				BC76542A1DE2D00D00E4CA06 /* EssenceViewController.m in Sources */,
+				BC76543C1DE2D72800E4CA06 /* BDJTabBarController.m in Sources */,
 				BC76522A1DE2C78500E4CA06 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1630,6 +1672,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "百思不得姐/classes/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-980681359.-----";
@@ -1643,6 +1687,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "百思不得姐/classes/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-980681359.-----";
