@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1534F0214D83860A7BDCE7A4 /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32A02CE226661F0B927A382 /* Pods______.framework */; };
+		BC6673881DE418D5009E441E /* BDJDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6673871DE418D5009E441E /* BDJDownload.m */; };
+		BC66738E1DE41FFA009E441E /* BDJEssenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC66738D1DE41FFA009E441E /* BDJEssenceModel.m */; };
+		BC6673921DE4347E009E441E /* EssenceVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6673901DE4347E009E441E /* EssenceVideoCell.m */; };
+		BC6673931DE4347E009E441E /* EssenceVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6673911DE4347E009E441E /* EssenceVideoCell.xib */; };
 		BC76522A1DE2C78500E4CA06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7652291DE2C78500E4CA06 /* main.m */; };
 		BC76522D1DE2C78500E4CA06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76522C1DE2C78500E4CA06 /* AppDelegate.m */; };
 		BC7652301DE2C78500E4CA06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76522F1DE2C78500E4CA06 /* ViewController.m */; };
@@ -261,6 +265,13 @@
 /* Begin PBXFileReference section */
 		6CAC5603166059A26A1BD8CF /* Pods-百思不得姐.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.release.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.release.xcconfig"; sourceTree = "<group>"; };
 		94E5A6E176220DF61D3F750D /* Pods-百思不得姐.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.debug.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.debug.xcconfig"; sourceTree = "<group>"; };
+		BC6673861DE418D5009E441E /* BDJDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJDownload.h; sourceTree = "<group>"; };
+		BC6673871DE418D5009E441E /* BDJDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJDownload.m; sourceTree = "<group>"; };
+		BC66738C1DE41FFA009E441E /* BDJEssenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJEssenceModel.h; sourceTree = "<group>"; };
+		BC66738D1DE41FFA009E441E /* BDJEssenceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJEssenceModel.m; sourceTree = "<group>"; };
+		BC66738F1DE4347E009E441E /* EssenceVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceVideoCell.h; sourceTree = "<group>"; };
+		BC6673901DE4347E009E441E /* EssenceVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceVideoCell.m; sourceTree = "<group>"; };
+		BC6673911DE4347E009E441E /* EssenceVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EssenceVideoCell.xib; sourceTree = "<group>"; };
 		BC7652251DE2C78500E4CA06 /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7652291DE2C78500E4CA06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC76522B1DE2C78500E4CA06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -717,6 +728,8 @@
 				BC7654461DE2E25B00E4CA06 /* BDJTabBar.m */,
 				BC76544B1DE2E82100E4CA06 /* UIView+Util.h */,
 				BC76544C1DE2E82100E4CA06 /* UIView+Util.m */,
+				BC6673861DE418D5009E441E /* BDJDownload.h */,
+				BC6673871DE418D5009E441E /* BDJDownload.m */,
 				BC76544E1DE2E97700E4CA06 /* BDJconst1.h */,
 				BC7654441DE2E1BC00E4CA06 /* PrefixHeader.pch */,
 			);
@@ -745,6 +758,8 @@
 		BC7652671DE2C9CA00E4CA06 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				BC66738C1DE41FFA009E441E /* BDJEssenceModel.h */,
+				BC66738D1DE41FFA009E441E /* BDJEssenceModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -752,6 +767,9 @@
 		BC7652681DE2C9CA00E4CA06 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				BC66738F1DE4347E009E441E /* EssenceVideoCell.h */,
+				BC6673901DE4347E009E441E /* EssenceVideoCell.m */,
+				BC6673911DE4347E009E441E /* EssenceVideoCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1257,6 +1275,7 @@
 				BC7653891DE2CA3600E4CA06 /* playButton.png in Resources */,
 				BC7653D01DE2CA3600E4CA06 /* mine-setting-icon@3x.png in Resources */,
 				BC7653C01DE2CA3600E4CA06 /* MainTagSubIconClick.png in Resources */,
+				BC6673931DE4347E009E441E /* EssenceVideoCell.xib in Resources */,
 				BC7653D71DE2CA3600E4CA06 /* nav_coin_icon.png in Resources */,
 				BC7654121DE2CA3600E4CA06 /* tabBar_me_click_icon@2x.png in Resources */,
 				BC7653F11DE2CA3600E4CA06 /* publish-review@2x.png in Resources */,
@@ -1518,13 +1537,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7654431DE2DF1800E4CA06 /* UIButton+Util.m in Sources */,
+				BC66738E1DE41FFA009E441E /* BDJEssenceModel.m in Sources */,
 				BC76544D1DE2E82100E4CA06 /* UIView+Util.m in Sources */,
+				BC6673881DE418D5009E441E /* BDJDownload.m in Sources */,
 				BC7654391DE2D5C900E4CA06 /* AddViewController.m in Sources */,
 				BC7652301DE2C78500E4CA06 /* ViewController.m in Sources */,
 				BC7654271DE2CFDC00E4CA06 /* BaseViewController.m in Sources */,
 				BC7654331DE2D07600E4CA06 /* ProfileViewController.m in Sources */,
 				BC76522D1DE2C78500E4CA06 /* AppDelegate.m in Sources */,
 				BC7654471DE2E25B00E4CA06 /* BDJTabBar.m in Sources */,
+				BC6673921DE4347E009E441E /* EssenceVideoCell.m in Sources */,
 				BC76542D1DE2D02700E4CA06 /* NewsViewController.m in Sources */,
 				BC7654301DE2D05B00E4CA06 /* AttentionViewController.m in Sources */,
 				BC76542A1DE2D00D00E4CA06 /* EssenceViewController.m in Sources */,
