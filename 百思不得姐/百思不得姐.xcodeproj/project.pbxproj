@@ -243,6 +243,9 @@
 		BC7654431DE2DF1800E4CA06 /* UIButton+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7654421DE2DF1800E4CA06 /* UIButton+Util.m */; };
 		BC7654471DE2E25B00E4CA06 /* BDJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7654461DE2E25B00E4CA06 /* BDJTabBar.m */; };
 		BC76544D1DE2E82100E4CA06 /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC76544C1DE2E82100E4CA06 /* UIView+Util.m */; };
+		BC7FF6DB1DE5795D00F7B547 /* BDJMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7FF6DA1DE5795D00F7B547 /* BDJMenu.m */; };
+		BC7FF6DE1DE5865900F7B547 /* BDJMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7FF6DD1DE5865900F7B547 /* BDJMenuViewController.m */; };
+		BC7FF6E11DE5882700F7B547 /* BDJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7FF6E01DE5882700F7B547 /* BDJTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -523,6 +526,12 @@
 		BC76544B1DE2E82100E4CA06 /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
 		BC76544C1DE2E82100E4CA06 /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
 		BC76544E1DE2E97700E4CA06 /* BDJconst1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJconst1.h; sourceTree = "<group>"; };
+		BC7FF6D91DE5795D00F7B547 /* BDJMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJMenu.h; sourceTree = "<group>"; };
+		BC7FF6DA1DE5795D00F7B547 /* BDJMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJMenu.m; sourceTree = "<group>"; };
+		BC7FF6DC1DE5865900F7B547 /* BDJMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJMenuViewController.h; sourceTree = "<group>"; };
+		BC7FF6DD1DE5865900F7B547 /* BDJMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJMenuViewController.m; sourceTree = "<group>"; };
+		BC7FF6DF1DE5882700F7B547 /* BDJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJTableViewController.h; sourceTree = "<group>"; };
+		BC7FF6E01DE5882700F7B547 /* BDJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJTableViewController.m; sourceTree = "<group>"; };
 		E32A02CE226661F0B927A382 /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -751,6 +760,10 @@
 			children = (
 				BC7654281DE2D00D00E4CA06 /* EssenceViewController.h */,
 				BC7654291DE2D00D00E4CA06 /* EssenceViewController.m */,
+				BC7FF6DC1DE5865900F7B547 /* BDJMenuViewController.h */,
+				BC7FF6DD1DE5865900F7B547 /* BDJMenuViewController.m */,
+				BC7FF6DF1DE5882700F7B547 /* BDJTableViewController.h */,
+				BC7FF6E01DE5882700F7B547 /* BDJTableViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -760,6 +773,8 @@
 			children = (
 				BC66738C1DE41FFA009E441E /* BDJEssenceModel.h */,
 				BC66738D1DE41FFA009E441E /* BDJEssenceModel.m */,
+				BC7FF6D91DE5795D00F7B547 /* BDJMenu.h */,
+				BC7FF6DA1DE5795D00F7B547 /* BDJMenu.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1207,7 +1222,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = zhb;
+				ORGANIZATIONNAME = wyx;
 				TargetAttributes = {
 					BC7652241DE2C78500E4CA06 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1540,12 +1555,15 @@
 				BC66738E1DE41FFA009E441E /* BDJEssenceModel.m in Sources */,
 				BC76544D1DE2E82100E4CA06 /* UIView+Util.m in Sources */,
 				BC6673881DE418D5009E441E /* BDJDownload.m in Sources */,
+				BC7FF6DE1DE5865900F7B547 /* BDJMenuViewController.m in Sources */,
 				BC7654391DE2D5C900E4CA06 /* AddViewController.m in Sources */,
 				BC7652301DE2C78500E4CA06 /* ViewController.m in Sources */,
 				BC7654271DE2CFDC00E4CA06 /* BaseViewController.m in Sources */,
 				BC7654331DE2D07600E4CA06 /* ProfileViewController.m in Sources */,
+				BC7FF6E11DE5882700F7B547 /* BDJTableViewController.m in Sources */,
 				BC76522D1DE2C78500E4CA06 /* AppDelegate.m in Sources */,
 				BC7654471DE2E25B00E4CA06 /* BDJTabBar.m in Sources */,
+				BC7FF6DB1DE5795D00F7B547 /* BDJMenu.m in Sources */,
 				BC6673921DE4347E009E441E /* EssenceVideoCell.m in Sources */,
 				BC76542D1DE2D02700E4CA06 /* NewsViewController.m in Sources */,
 				BC7654301DE2D05B00E4CA06 /* AttentionViewController.m in Sources */,

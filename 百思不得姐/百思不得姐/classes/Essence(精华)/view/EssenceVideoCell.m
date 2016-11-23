@@ -69,6 +69,7 @@
     return cell;
     
 }
+
 -(void)setDetailModel:(BDJEssenceDetail *)detailModel{
     _detailModel=detailModel;
     //    1,用户图标
@@ -104,11 +105,25 @@
     self.playTimeLabel.text=[NSString stringWithFormat:@"%02ld:%02ld",min,sec];
     
     
-    
     //    8,评论文字
     if(detailModel.top_comments.count>0){
         BDJEssenceComment *comment=[detailModel.top_comments firstObject];
         self.commentLabel.text=comment.content;
+    }else{
+        self.commentLabel.text=nil;
+    }
+    //    强制cell布局
+    [self layoutIfNeeded];
+    //    修改评论视图约束
+    
+    
+    if(detailModel.top_comments.count>0){
+        self.commentYCons.constant=10;
+        self.commentHeightCons.constant=self.commentLabel.frame.size.height+10+10;
+    }else{
+        //没有评论部分
+        self.commentHeightCons.constant=0;
+        self.commentYCons.constant=0;
     }
     
     //    9,标签
@@ -118,11 +133,18 @@
         [tagString appendFormat:@"%@",tag.name];
     }
     self.tagLabel.text=tagString;
+    
     //    10,
     [self.dingBtn setTitle:detailModel.up  forState:UIControlStateNormal];
     [self.caiBtn setTitle:[detailModel.down stringValue]  forState:UIControlStateNormal];
     [self.shareBtn setTitle:[detailModel.forward stringValue]  forState:UIControlStateNormal];
     [self.commentBtn setTitle:detailModel.comment forState:UIControlStateNormal];
+    
+    //    强制刷新
+    [self layoutIfNeeded];
+    //    获取cell高度
+    detailModel.cellHeight=@(CGRectGetMaxY(self.dingBtn.frame)+10+10);
+    
     
 }
 - (void)awakeFromNib {

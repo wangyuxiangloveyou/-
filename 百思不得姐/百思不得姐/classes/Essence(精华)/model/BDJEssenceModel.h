@@ -48,6 +48,9 @@
 @property (nonatomic,strong)BDJEssenceUser<Optional> *u;
 @property (nonatomic,copy)NSString<Optional> *up;
 @property (nonatomic,strong)BDJEssenceVideo<Optional> *video;
+//获取cell对应高度
+@property (nonatomic,strong)NSNumber<Optional>*cellHeight;
+
 @end
 
 
