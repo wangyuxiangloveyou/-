@@ -17,8 +17,14 @@
 
 - (void)viewDidLoad {
       [super viewDidLoad];
+    self.rightHLImageName=@"";
+    self.rightImageName=@"";
   }
 
+-(void)setSubMenus:(NSArray *)subMenus{
+    [super setSubMenus:subMenus];
+//    显示导航
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

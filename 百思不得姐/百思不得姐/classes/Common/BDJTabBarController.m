@@ -28,6 +28,7 @@
        [self creatViewController];
 //    获取菜单数据
     [self loadMenuData];
+    self.view.backgroundColor=[UIColor whiteColor];
 
 //    [self downloadMenuData];
 }

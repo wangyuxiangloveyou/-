@@ -9,13 +9,20 @@
 #import "BDJMenuViewController.h"
 #import "BDJTableViewController.h"
 #import "BDJMenu.h"
+#import "BDJMenuViews.h"
 
 
-@interface BDJMenuViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource>
+@interface BDJMenuViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,BDJMenuViewDelegate>
 //视图控制器数据
 @property(nonatomic,strong)NSMutableArray *ctrlArray;
 //分页视图控制器
 @property(nonatomic,strong)UIPageViewController *pageCtrl;
+//当前显示视图控制器的序号
+@property (nonatomic,assign)NSInteger curPageIndex;
+
+//菜单视图
+@property (nonatomic,strong)BDJMenuViews *menuView;
+
 @end
 
 @implementation BDJMenuViewController
@@ -29,6 +36,7 @@
     
 }
 -(void)setSubMenus:(NSArray *)subMenus{
+    
     _subMenus=subMenus;
     for (BDJSubMenu *subMenu in subMenus){
        BDJTableViewController * ctrl =[[BDJTableViewController alloc]init];
@@ -39,6 +47,26 @@
         
     }
     [self creatPageCtrl];
+    [self createMenu];
+//    创建导航
+}
+-(void)createMenu{
+    BDJMenuViews *menuView=[[BDJMenuViews alloc]initWithItens:self.subMenus rightIcon:self.rightImageName rightSelectIcon:self.rightHLImageName ];
+    self.menuView=menuView;
+    
+//    设置代理
+    menuView.delegate=self;
+    
+      menuView.frame=CGRectMake(0, 0, KScreenWidth, 44);
+    self.navigationItem.titleView=menuView;
+  
+    
+//    约束
+//    [menuView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.equalTo(self.view);
+//        make.top.equalTo(self.view).offset(20);
+//        make.height.mas_equalTo(44);
+//    }];
 }
 //创建分页控制器
 -(void)creatPageCtrl{
@@ -88,6 +116,43 @@
         return  self.ctrlArray[curIndex-1];
     }
 
+}
+
+-(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers{
+//    获取将要滑到界面序号
+    UIViewController *toCtrl=[pendingViewControllers lastObject];
+    NSInteger index=[self.ctrlArray indexOfObject:toCtrl];
+    self.curPageIndex=index;
+}
+//手动滑动pageCtrl.切换结束时调用
+-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed{
+
+    
+    self.menuView.selectIndex=self.curPageIndex;
+//    1,上一次序号
+    UIViewController *lastCtrl=[previousViewControllers lastObject];
+
+    
+   
+}
+#pragma mark-BDJMenuDegate
+-(void)menuView:(BDJMenuViews *)menuView didClickBtnAtIndex:(NSInteger)index{
+//    获取视图控制器
+   
+    UIViewController * vc = self.ctrlArray[index];
+     //        向右滑动
+    UIPageViewControllerNavigationDirection dir=UIPageViewControllerNavigationDirectionForward;
+    if (index < self.curPageIndex){
+//        向左滑动
+        dir=UIPageViewControllerNavigationDirectionReverse;
+    }
+    self.curPageIndex=index;
+    [self.pageCtrl setViewControllers:@[vc] direction:(UIPageViewControllerNavigationDirectionForward) animated:YES completion:nil];
+    
+}
+
+-(void)menuView:(BDJMenuViews *)menuView didClickRihgtBtn:(MenuType)type{
+    NSLog(@"点击右边");
 }
 /*
 #pragma mark - Navigation
