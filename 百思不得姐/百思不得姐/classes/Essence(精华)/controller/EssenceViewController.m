@@ -17,8 +17,10 @@
 
 - (void)viewDidLoad {
       [super viewDidLoad];
-    self.rightHLImageName=@"";
-    self.rightImageName=@"";
+   
+    self.rightImageName = @"navigationButtonRandom_26x26_";
+    self.rightHLImageName = @"navigationButtonRandomClickN_26x26_";
+
   }
 
 -(void)setSubMenus:(NSArray *)subMenus{

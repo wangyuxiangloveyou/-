@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCellId" id="KGk-i7-Jjw" customClass="EssenceVideoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="audioCellId" id="KGk-i7-Jjw" customClass="EssenceAudioCell">
             <rect key="frame" x="0.0" y="0.0" width="384" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -61,30 +61,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Li-DJ-AYU" userLabel="videoImageView">
-                                <rect key="frame" x="10" y="79" width="364" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="hBg-zP-oZW"/>
-                                </constraints>
-                            </imageView>
-                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYo-ig-jhS" userLabel="Viewcommt">
-                                <rect key="frame" x="10" y="209" width="364" height="60"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jw-JJ-l1f" userLabel="Labelcomment">
-                                        <rect key="frame" x="10" y="10" width="344" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.93966346150000002" green="0.28083018850000002" blue="0.32450753259999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8Jw-JJ-l1f" secondAttribute="trailing" constant="10" id="Et8-qp-G1S"/>
-                                    <constraint firstItem="8Jw-JJ-l1f" firstAttribute="leading" secondItem="KYo-ig-jhS" secondAttribute="leading" constant="10" id="Gyk-NB-8sA"/>
-                                    <constraint firstItem="8Jw-JJ-l1f" firstAttribute="top" secondItem="KYo-ig-jhS" secondAttribute="top" constant="10" id="hrQ-sA-oTd"/>
-                                    <constraint firstAttribute="height" constant="60" id="wNd-64-8Ni"/>
-                                </constraints>
-                            </view>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HO5-1H-ZHR" userLabel="tagView">
                                 <rect key="frame" x="10" y="279" width="364" height="30"/>
                                 <subviews>
@@ -114,6 +90,12 @@
                                     <constraint firstItem="55u-iC-fD2" firstAttribute="top" secondItem="HO5-1H-ZHR" secondAttribute="top" constant="5" id="seC-On-LoK"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Li-DJ-AYU" userLabel="videoImageView">
+                                <rect key="frame" x="10" y="79" width="364" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="hBg-zP-oZW"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6P-a1-I55" userLabel="dingButton">
                                 <rect key="frame" x="10" y="319" width="91" height="24"/>
                                 <constraints>
@@ -157,12 +139,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibE-fa-0My">
-                                <rect key="frame" x="172" y="119" width="40" height="40"/>
+                                <rect key="frame" x="172" y="163" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PLs-ow-gNN"/>
                                     <constraint firstAttribute="width" constant="40" id="c0N-5U-OOe"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="video-play.png"/>
+                                <state key="normal" image="playButtonPlay.png"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gFS-92-tFT"/>
                                 </connections>
@@ -201,6 +189,24 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYo-ig-jhS" userLabel="Viewcommt">
+                                <rect key="frame" x="10" y="209" width="364" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jw-JJ-l1f" userLabel="Labelcomment">
+                                        <rect key="frame" x="10" y="10" width="344" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8Jw-JJ-l1f" secondAttribute="trailing" constant="10" id="Et8-qp-G1S"/>
+                                    <constraint firstItem="8Jw-JJ-l1f" firstAttribute="leading" secondItem="KYo-ig-jhS" secondAttribute="leading" constant="10" id="Gyk-NB-8sA"/>
+                                    <constraint firstItem="8Jw-JJ-l1f" firstAttribute="top" secondItem="KYo-ig-jhS" secondAttribute="top" constant="10" id="hrQ-sA-oTd"/>
+                                    <constraint firstAttribute="height" constant="60" id="wNd-64-8Ni"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -231,6 +237,7 @@
                             <constraint firstItem="Jjq-Bl-5ip" firstAttribute="leading" secondItem="Izw-Rg-vqD" secondAttribute="trailing" constant="20" id="aFC-2g-Gwl"/>
                             <constraint firstItem="ibE-fa-0My" firstAttribute="centerX" secondItem="8Li-DJ-AYU" secondAttribute="centerX" id="cq3-cB-FOk"/>
                             <constraint firstAttribute="trailing" secondItem="HO5-1H-ZHR" secondAttribute="trailing" constant="10" id="dCP-oZ-Vvq"/>
+                            <constraint firstItem="KYo-ig-jhS" firstAttribute="top" secondItem="ibE-fa-0My" secondAttribute="bottom" constant="6" id="gNk-KO-riS"/>
                             <constraint firstAttribute="trailing" secondItem="ByH-lP-eLg" secondAttribute="trailing" constant="20" id="gxC-Zw-AMS"/>
                             <constraint firstItem="Izw-Rg-vqD" firstAttribute="top" secondItem="jYo-Yd-3mS" secondAttribute="top" constant="8" id="hQS-z1-C30"/>
                             <constraint firstItem="KYo-ig-jhS" firstAttribute="leading" secondItem="jYo-Yd-3mS" secondAttribute="leading" constant="10" id="iy8-LH-SFK"/>
@@ -245,6 +252,11 @@
                             <constraint firstItem="KYo-ig-jhS" firstAttribute="top" secondItem="oDw-HX-a6N" secondAttribute="bottom" constant="14" id="z57-eF-UoL"/>
                             <constraint firstItem="0ki-Dk-FR8" firstAttribute="leading" secondItem="e6P-a1-I55" secondAttribute="trailing" id="zPt-Tw-Yq0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ort-xN-5Ak"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -257,12 +269,13 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="ImageHeightCons" destination="hBg-zP-oZW" id="oor-R6-nbh"/>
+                <outlet property="audioImageView" destination="8Li-DJ-AYU" id="25i-kb-aFb"/>
                 <outlet property="caiBtn" destination="0ki-Dk-FR8" id="T4r-Mz-U7X"/>
                 <outlet property="clickMoreBtn" destination="aMe-8K-v2T" id="cCd-GT-PMQ"/>
                 <outlet property="commentBtn" destination="Xcc-8e-IAh" id="VZA-Ce-sCn"/>
-                <outlet property="commentHeightCons" destination="wNd-64-8Ni" id="4IG-ZS-Ajr"/>
+                <outlet property="commentHeightCons" destination="wNd-64-8Ni" id="Yjc-EP-EGg"/>
                 <outlet property="commentLabel" destination="8Jw-JJ-l1f" id="JKk-Fm-MIu"/>
-                <outlet property="commentYCons" destination="R85-Px-Zkc" id="7cd-e6-g6H"/>
+                <outlet property="commentYCons" destination="R85-Px-Zkc" id="ebz-EF-hx6"/>
                 <outlet property="descLabel" destination="bvh-ep-7nw" id="O9x-Nu-9mS"/>
                 <outlet property="dingBtn" destination="e6P-a1-I55" id="AqZ-VY-Qo9"/>
                 <outlet property="passtimeLabel" destination="ByH-lP-eLg" id="25J-1Y-cJX"/>
@@ -272,7 +285,6 @@
                 <outlet property="tagLabel" destination="GlO-Mx-fBE" id="9B5-Y6-lUO"/>
                 <outlet property="userImageView" destination="Izw-Rg-vqD" id="fue-iW-KCE"/>
                 <outlet property="userNameLabel" destination="Jjq-Bl-5ip" id="d8t-bo-dVL"/>
-                <outlet property="videoImageView" destination="8Li-DJ-AYU" id="cB1-t7-Gvo"/>
             </connections>
             <point key="canvasLocation" x="144" y="326"/>
         </tableViewCell>
@@ -286,7 +298,7 @@
         <image name="mainCellDingClick.png" width="20" height="20"/>
         <image name="mainCellShare.png" width="20" height="20"/>
         <image name="mainCellShareClick.png" width="23" height="23"/>
+        <image name="playButtonPlay.png" width="30" height="30"/>
         <image name="tagicon.png" width="15" height="15"/>
-        <image name="video-play.png" width="71" height="71"/>
     </resources>
 </document>

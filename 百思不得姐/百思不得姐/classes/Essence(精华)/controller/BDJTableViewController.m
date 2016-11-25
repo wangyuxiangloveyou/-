@@ -11,6 +11,11 @@
 #import "BDJEssenceModel.h"
 #import "EssenceVideoCell.h"
 #import <MJRefresh/MJRefresh.h>
+#import "EssenceImageCell.h"
+#import "EssenceTextCell.h"
+#import "EssenceAudioCell.h"
+
+
 @interface  BDJTableViewController()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView *tbView;
@@ -65,25 +70,27 @@
 
 -(void)downloadListData{
     
-    [ProgressHUD show:@"在下载" Interaction:NO];
+    //开始下载
+    [ProgressHUD show:@"正在下载" Interaction:NO];
+    
     //  http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.3/0-20.json
     NSString *urlstring=[NSString stringWithFormat:@"%@/bs0315-iphone-4.3/%@-20.json",self.url,self.np];
-//    
-//    NSString *urlstring=@"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.3/0-20.json";
+    
+    //    NSString *urlstring=@"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.3/0-20.json";
     [BDJDownload downloadWithURLString:urlstring succes:^(NSData *data) {
         
         NSError *error=nil;
         BDJEssenceModel *model=[[BDJEssenceModel alloc]initWithData:data error:&error];
         //        NSLog(@"%@",model);
         if  (error){
-            //            NSLog(@"%@",error);
+            //   NSLog(@"%@",error);
         }else{
-            if  (self.np.integerValue==0){
-                //                第一页
+            if  (self.np.integerValue == 0){
+                //  第一页
                 self.model=model;
                 
             }else{
-                //                后面页数
+                // 后面页数
                 NSMutableArray *tmpArray=[NSMutableArray arrayWithArray:self.model.list];
                 [tmpArray addObjectsFromArray:model.list];
                 model.list=(NSArray<Optional,BDJEssenceDetail> *)tmpArray;
@@ -99,7 +106,7 @@
         
         
     } fail:^(NSError *error) {
-        [ProgressHUD showError:@"下载失败"];
+       [ProgressHUD showError:@"下载失败"];
     }];
 }
 
@@ -116,13 +123,26 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BDJEssenceDetail *detail=self.model.list[indexPath.row];
     UITableViewCell *cell=nil;
+    
     if  ([detail.type isEqualToString:@"video"]){
-       cell=[EssenceVideoCell videoCellForTableView:tableView atIndexPath:indexPath withModel:detail];
-    }else{
+        cell=[EssenceVideoCell videoCellForTableView:tableView atIndexPath:indexPath withModel:detail];
+    }else if ([detail.type isEqualToString:@"image"]){
+//        图片cell
+         cell=[EssenceImageCell imageCellForTableView:tableView atIndexPath:indexPath withModel:detail];
+        
+    }else if ([detail.type isEqualToString:@"text"]){
+        //        图片cell
+        cell=[EssenceTextCell textCellForTableView:tableView atIndexPath:indexPath withModel:detail];
+    }else if ([detail.type isEqualToString:@"audio"]){
+        //        图片cell
+        cell=[EssenceAudioCell audioCellForTableView:tableView atIndexPath:indexPath withModel:detail];
+    }
+
+    else{
         cell=[[UITableViewCell alloc]init];
     }
-      cell.selectionStyle=UITableViewCellSelectionStyleNone;
-      return cell;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
