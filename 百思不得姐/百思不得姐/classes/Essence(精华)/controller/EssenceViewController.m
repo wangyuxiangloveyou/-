@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
       [super viewDidLoad];
-   
+
     self.rightImageName = @"navigationButtonRandom_26x26_";
     self.rightHLImageName = @"navigationButtonRandomClickN_26x26_";
 
@@ -27,6 +27,7 @@
     [super setSubMenus:subMenus];
 //    显示导航
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

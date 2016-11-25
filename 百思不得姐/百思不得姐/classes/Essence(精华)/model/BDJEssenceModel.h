@@ -13,12 +13,10 @@
 @class BDJEssenceVideo;
 @class BDJEssenceImage;
 @class BDJEssenceAudio;
-
 @protocol NSString;
 @protocol BDJEssenceDetail;
 @protocol BDJEssenceTag;
 @protocol BDJEssenceComment;
-
 
 @interface BDJEssenceModel : JSONModel
 @property (nonatomic,strong)BDJEssenceInfo<Optional> *info;
@@ -52,10 +50,8 @@
 @property (nonatomic,strong)BDJEssenceVideo<Optional> *video;
 
 @property(nonatomic,strong)BDJEssenceImage<Optional> *image;
-
 //音频
 @property (nonatomic, strong)BDJEssenceAudio<Optional> *audio;
-
 //获取cell对应高度
 @property (nonatomic,strong)NSNumber<Optional>*cellHeight;
 @end
@@ -73,6 +69,7 @@
 @property (nonatomic,strong)NSArray<Optional,NSString> *thumbnail;
 @property (nonatomic,strong)NSArray<Optional,NSString> *thumbnail_small;
 @property (nonatomic,strong)NSNumber<Optional,NSString> *width;
+
 @end
 
 

@@ -25,80 +25,75 @@
     [UITabBar appearance].tintColor=[UIColor colorWithWhite:64.0f/255.9f alpha:1.0f];
     self.view.backgroundColor=[UIColor whiteColor];
     [self setValue:[[BDJTabBar alloc]init] forKey:@"tabBar"];
-//    创建视图控制器
-       [self creatViewController];
-//    获取菜单数据
+    // 创建视图控制器
+    [self creatViewController];
+    // 获取菜单数据
     [self loadMenuData];
     self.view.backgroundColor=[UIColor whiteColor];
-
-//    [self downloadMenuData];
+    
+    //  [self downloadMenuData];
 }
-//获取菜单数据
+
+// 获取菜单数据
 -(void)loadMenuData{
     NSString *filePath=[self menuFilePath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]){
-//        读文件
+        // 读文件
         NSData *data=[NSData dataWithContentsOfFile:filePath];
         BDJMenu *menu=[[BDJMenu alloc]initWithData:data error:nil];
         [self showAllMenuData:menu];
     }
-    //更新菜单数据
+    // 更新菜单数据
     [self downloadMenuData];
 }
+
 // 下周菜单数据
 -(void)downloadMenuData{
-//    http://s.budejie.com/public/list-appbar/bs0315-iphone-4.3/
+    
+    //    http://s.budejie.com/public/list-appbar/bs0315-iphone-4.3/
     NSString *urlstring=@"http://s.budejie.com/public/list-appbar/bs0315-iphone-4.3/";
     [BDJDownload downloadWithURLString:urlstring succes:^(NSData *data) {
-//解析
+        
+        //解析
         BDJMenu *menu=[[BDJMenu alloc]initWithData:data error:nil];
         
         NSString *path=[self menuFilePath];
-//        如果plist文件不存在,显示菜单数据
+        // 如果plist文件不存在,显示菜单数据
         if (![[NSFileManager defaultManager] fileExistsAtPath:path]){
-               [self showAllMenuData:menu];
+            [self showAllMenuData:menu];
         }
-     
+        
         //存在本地
         [data writeToFile:path atomically:YES];
         
     } fail:^(NSError *error) {
-        
     }];
-    
 }
 
 //百度存储菜单数据的文件名
 -(NSString *)menuFilePath{
-   NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     return [docPath stringByAppendingPathComponent:@"menu.plist"];
-    
-    
 }
+
 //显示菜单数据
 -(void)showAllMenuData:(BDJMenu *)menu{
     
-//    设置精华菜单数据
+    // 设置精华菜单数据
     UINavigationController *essenceNavCtrl=[self.viewControllers firstObject];
     EssenceViewController *essenceCtrl=[essenceNavCtrl.viewControllers firstObject];
     essenceCtrl.subMenus=[[menu.menus firstObject]submenus];
     
-//  设置最新的界面菜单数据
+    // 设置最新的界面菜单数据
     if (self.viewControllers.count>=2){
-    UINavigationController *newsNavCtrl=self.viewControllers[1];
+        UINavigationController *newsNavCtrl=self.viewControllers[1];
         NewsViewController *newsCtrl=[newsNavCtrl.viewControllers firstObject];
-        
         if (menu.menus.count>=2){
-           newsCtrl.subMenus=[menu.menus[1]submenus];
+            newsCtrl.subMenus=[menu.menus[1]submenus];
         }
-       
     }
-    
-    
-    
-    
-    
 }
+
 //创建视图控制器
 -(void)creatViewController{
     //1精华
@@ -106,8 +101,10 @@
     
     // 2,最新
     [self addSubController:@"NewsViewController" imageName:@"tabBar_new_icon" selectImageName:@"tabBar_me_click_icon" title:@"最新"];
+    
     //3,添加
-//    [self addSubController:@"AddViewController" imageName:@"tabBar_publish_icon" selectImageName:@"tabBar_publish_click_icon" title:@"添加"];
+    //    [self addSubController:@"AddViewController" imageName:@"tabBar_publish_icon" selectImageName:@"tabBar_publish_click_icon" title:@"添加"];
+    
     //4,关注
     [self addSubController:@"AttentionViewController" imageName:@"tabBar_friendTrends_icon" selectImageName:@"tabBar_friendTrends_click_icon" title:@"关注"];
     
@@ -117,6 +114,7 @@
 
 //添加单个视图控制器
 -(void)addSubController:(NSString *)ctrlName imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName title:(NSString *)title{
+    
     //1,创建视图控制器对象
     Class cls=NSClassFromString(ctrlName);
     UIViewController *tmpCtrl=[[cls alloc]init];
@@ -131,16 +129,8 @@
     //4导航
     UINavigationController *navCtrl=[[UINavigationController alloc]initWithRootViewController:tmpCtrl];
     
-    
     //5. 让tabCtrl管理这个视图控制器
     [self addChildViewController:navCtrl];
-    
-    
-    
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

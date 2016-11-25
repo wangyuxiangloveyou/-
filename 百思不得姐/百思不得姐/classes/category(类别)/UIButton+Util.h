@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (Util)
+
 //创建按钮的便利方法
 +(UIButton *)createBtnTitle:(NSString *)title bgimageNmae:(NSString *)bgImageName highLightBgImageNmae:(NSString *)highLightBgImageNmae target:(id)target action:(SEL)action;
-
 @end

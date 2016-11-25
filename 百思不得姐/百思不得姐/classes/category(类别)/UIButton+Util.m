@@ -8,7 +8,6 @@
 
 #import "UIButton+Util.h"
 
-
 @implementation UIButton (Util)
 
 +(UIButton *)createBtnTitle:(NSString *)title bgimageNmae:(NSString *)bgImageName highLightBgImageNmae:(NSString *)highLightBgImageNmae target:(id)target action:(SEL)action{
@@ -16,14 +15,11 @@
     if (title != nil){
         [btn setTitle:title forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
     }
-    
-    if (bgImageName){
+    if(bgImageName){
         [btn setBackgroundImage:[UIImage imageNamed:bgImageName] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:highLightBgImageNmae] forState:UIControlStateNormal];
     }
-    
     if(target && action){
         [btn addTarget:target action:action forControlEvents:UIControlStateNormal];
     }

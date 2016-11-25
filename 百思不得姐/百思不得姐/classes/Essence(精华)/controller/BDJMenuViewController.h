@@ -8,8 +8,8 @@
 
 #import "BaseViewController.h"
 
-
 //精华和最新界面公共的父类
+
 @interface BDJMenuViewController : BaseViewController
 
 //标题列表数据

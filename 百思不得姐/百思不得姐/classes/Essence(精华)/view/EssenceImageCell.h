@@ -16,4 +16,5 @@
 
 //便利创建cell的方法
 +(EssenceImageCell *)imageCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexpath withModel:(BDJEssenceDetail *)detailModel;
+
 @end

@@ -12,16 +12,16 @@
 
 +(UILabel *)creatLabel:(NSString *)title textColor:(UIColor *)color font:(UIFont *)font{
     UILabel *label=[[UILabel alloc]init];
-    if (title){
+    if(title){
         label.text=title;
     }
-    if (color){
+    if(color){
         label.textColor=color;
     }
-    if (font){
+    if(font){
         label.font=font;
     }
     return  label;
-
 }
+
 @end

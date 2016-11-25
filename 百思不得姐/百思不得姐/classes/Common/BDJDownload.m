@@ -10,7 +10,6 @@
 
 @implementation BDJDownload
 
-
 +(void)downloadWithURLString:(NSString *)urlString succes:(SUCCESSBLOCK)finishBlock fail:(FAILBLOCK)failBlock{
     
     //1,创建NSURL
@@ -26,7 +25,6 @@
     // .设置返回数据是原始的二进制数据
     manager.responseSerializer=[AFHTTPResponseSerializer serializer];
     
-    
     //4下载
     NSURLSessionDataTask *task=[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (error){
@@ -41,15 +39,13 @@
             }else{
                 //请求数据失败
                 NSError *e=[NSError errorWithDomain:urlString code:r.statusCode userInfo:@{@"msg":@"下载失败"}];
-                 failBlock(e);
+                failBlock(e);
             }
         }
     }];
     
     //    5,下载
     [task resume];
-    
-    
 }
 
 @end

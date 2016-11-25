@@ -11,27 +11,21 @@
 
 #define KContainerVieTag (100)
 @interface BDJMenuViews()
-
 @property(nonatomic,strong)UIScrollView *scorllView;
-
 @property(nonatomic,strong)UIView *lineView;
 @end
 @implementation BDJMenuViews
 
-
 -(instancetype)initWithItens:(NSArray *)array rightIcon:(NSString *)iconName rightSelectIcon:(NSString *)selectIconName{
-    
     if (self=[super init]){
         //        左边的滚动视图
         UIScrollView *scrollView=[[UIScrollView alloc]init];
         scrollView.showsHorizontalScrollIndicator=NO;
         [self addSubview:scrollView];
         self.scorllView=scrollView;
-        
         //        约束
         [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self).width.insets(UIEdgeInsetsMake(0, 0, 0, 60));
-            
         }];
         //        1.1循坏创建按钮
         //        1.1.1 容器视图
@@ -44,7 +38,6 @@
             make.edges.equalTo(scrollView);
             make.height.equalTo(scrollView);
         }];
-        
         //        循坏创建按钮
         CGFloat btnW = 60;
         //        上一次添加的子视图
@@ -54,13 +47,11 @@
         for (BDJSubMenu *subMenu in array){
             BDJMenuButton *btn=[[BDJMenuButton alloc]initWithTitle:subMenu.name];
             btn.btnIndex=i;
-//            默认选中第一个
+            //            默认选中第一个
             if (i==0){
                 btn.clicked=YES;
             }
             [containerView addSubview:btn];
-            
-            
             [btn addTarget:self action:@selector(clickMenu:) forControlEvents:UIControlEventTouchUpInside];
             
             //            约束
@@ -78,23 +69,24 @@
             i++;
         }
         
-        //        1.1.3更新容器约束
+        //1.1.3更新容器约束
         [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(lastView);
         }];
         
-        //        2,右边的按钮
+        //2,右边的按钮
         UIButton *rightBtn=[UIButton createBtnTitle:nil bgimageNmae:iconName highLightBgImageNmae:selectIconName target:self action:@selector(clickRightBtn)];
         [self addSubview:rightBtn];
         
-        //        约束
+        // 约束
         [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self).offset(4);
             make.right.equalTo(self).offset(-10);
             make.width.mas_equalTo(36);
             make.height.mas_equalTo(36);
         }];
-//        3.下滑线
+        
+        //3.下滑线
         self.lineView=[[UIView alloc]init];
         [self.scorllView addSubview:self.lineView];
         self.lineView.backgroundColor=[UIColor redColor];
@@ -102,61 +94,53 @@
             make.left.equalTo(self.scorllView);
             make.bottom.equalTo(self.scorllView).offset(-4);
             make.width.mas_equalTo(btnW);
-             make.height.mas_equalTo(2);
-            
+            make.height.mas_equalTo(2);
         }];
     }
     return  self;
 }
-//    1切换按钮选中状态
+
+// 1切换按钮选中状态
 -(void)setSelectIndex:(NSInteger)selectIndex{
     if(_selectIndex != selectIndex){
         BDJMenuButton *lastBtn=nil;
         BDJMenuButton *curBtn=nil;
-
         UIView *containerView=[self.scorllView viewWithTag:KContainerVieTag];
         for(BDJMenuButton *tmpBtn in containerView.subviews){
             if (tmpBtn.btnIndex==selectIndex){
                 curBtn=tmpBtn;
-                
             }else if (tmpBtn.btnIndex==_selectIndex){
                 lastBtn=tmpBtn;
             }
         }
+        
         //1,取消之前选中按钮
         lastBtn.clicked=NO;
-       
         
         //2,选中当前按钮
-         curBtn.clicked=YES;
+        curBtn.clicked=YES;
+        
         //3,修改下划线位置
         [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(curBtn);
             make.bottom.equalTo(self.scorllView).offset(-4);
             make.width.mas_equalTo(60);
             make.height.mas_equalTo(2);
-
         }];
-//        4,将当前选中按钮尽可能显示在中间位置
         
+        // 4,将当前选中按钮尽可能显示在中间位置
         CGFloat x=CGRectGetMidX(curBtn.frame)-self.scorllView.bounds.size.width/2;
-        
-//        左边不能越界
+        // 左边不能越界
         if (x<0){
             x=0;
         }
-        //        右边不能越界
+        //右边不能越界
         if (x>self.scorllView.contentSize.width-self.scorllView.bounds.size.width) {
             x=self.scorllView.contentSize.width-self.scorllView.bounds.size.width;
         }
         self.scorllView.contentOffset=CGPointMake(x, 0);
-          _selectIndex=selectIndex;
-        
-        
+        _selectIndex=selectIndex;
     }
-  
-   
-    
 }
 
 -(void)clickMenu:(BDJMenuButton *)btn{
@@ -166,12 +150,11 @@
     //    2.切换对应界面
     [self.delegate menuView:self didClickBtnAtIndex:self.selectIndex];
 }
-//点击按钮
 
+//点击按钮
 -(void)clickRightBtn{
     
 }
-
 @end
 
 @implementation BDJMenuButton{
@@ -190,7 +173,6 @@
             make.top.bottom.equalTo(self);
             make.edges.equalTo(self);
         }];
-        
     }
     return  self;
 }

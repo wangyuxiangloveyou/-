@@ -10,26 +10,19 @@
 #define BDJconst1_h
 
 //1,屏幕宽度和高度
-
-//const CGFloat kscreenWidth=([[UIScreen mainScreen]bounds].size.height)
 #define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 #define KScreenheight ([[UIScreen mainScreen] bounds].size.height)
+
 //二
 //网址链接
-
-
 //获取菜单
 //http://s.budejie.com/public/list-appbar/bs0315-iphone-4.3/
-
-
-
 //1.精华
 //1)首页
 //1.1 推荐
 //http://s.budejie.com/topic/list/jingxuan/1/bs0315-iphone-4.3/0-20.json
 
 //http://s.budejie.com/topic/list/jingxuan/1/bs0315-iphone-4.3/1472004962-20.json
-
 
 //1.1.1 赞一下
 //http://api.budejie.com/api/api_open.php?a=love&appname=bs0315&asid=85B76C13-0B29-452C-AEAD-C07DB202EB0D&c=post&client=iphone&device=iPhone%205&from=ios&id=20063833&jbk=0&mac=&market=&openudid=79e2fe79d9cb93a19eb8f530e2f301a8798a09e2&sex=m&tj_from=image&udid=&uid=19266938&ver=4.3
@@ -56,10 +49,6 @@
 //http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.3/0-20.json
 
 //http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.3/1471995962-20.json
-
-
-
-
 
 
 //2)穿越

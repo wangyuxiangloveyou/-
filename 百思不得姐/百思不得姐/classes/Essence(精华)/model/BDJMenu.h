@@ -8,12 +8,9 @@
 
 #import <JSONModel/JSONModel.h>
 
-
 @class BDJDefault;
-
 @protocol BDJMenuList;
 @protocol BDJSubMenu;
-
 
 @interface BDJMenu : JSONModel
 
@@ -21,7 +18,6 @@
 @property (nonatomic, strong)NSArray<Optional,BDJMenuList> *menus;
 
 @end
-
 
 @interface BDJDefault : JSONModel
 
@@ -31,14 +27,12 @@
 
 @end
 
-
 @interface BDJMenuList : JSONModel
 
 @property (nonatomic, copy)NSString<Optional> *name;
 @property (nonatomic, strong)NSArray<Optional,BDJSubMenu> *submenus;
 
 @end
-
 
 @interface BDJSubMenu : JSONModel
 

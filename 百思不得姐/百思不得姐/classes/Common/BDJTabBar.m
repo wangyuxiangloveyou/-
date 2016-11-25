@@ -10,21 +10,17 @@
 
 @implementation BDJTabBar
 
-
 -(instancetype)init{
-    
     if (self == [super init]){
         UIButton *addBtn=[UIButton createBtnTitle:nil bgimageNmae:@"tabBar_publish_icon" highLightBgImageNmae:@"tabBar_publish_click_icon" target:self action:@selector(publishAction)];
-//        addBtn.frame=CGRectMake(180, 0, 40, 50);
-        
+        //        addBtn.frame=CGRectMake(180, 0, 40, 50);
         [self addSubview:addBtn];
     }
     return self;
 }
 
 -(void)publishAction{
-   
-   
+    
 }
 
 -(void)layoutSubviews{
@@ -37,21 +33,17 @@
             //发布按钮
             tmpView.size=CGSizeMake(40, 40);
             tmpView.center=CGPointMake(KScreenWidth/2, 49.0f/2);
-        
         }else if ([tmpView isKindOfClass:NSClassFromString(@"UITabBarButton")]){
-          
             tmpView.width=btnW;
             if (index >= 2){
                 //第三个需要添加按钮宽度值
                 tmpView.x=(index+1)*btnW;
             }else{
-                 tmpView.x=index*btnW;
+                tmpView.x=index*btnW;
             }
             index++;
-            
         }
     }
-   
 }
 
 @end

@@ -17,4 +17,5 @@
 
 //便利创建cell的方法
 +(EssenceAudioCell *)audioCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexpath withModel:(BDJEssenceDetail *)detailModel;
+
 @end

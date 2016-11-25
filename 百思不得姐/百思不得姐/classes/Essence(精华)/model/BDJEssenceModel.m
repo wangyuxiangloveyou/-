@@ -18,8 +18,8 @@
 
 +(JSONKeyMapper *)keyMapper{
     return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@{@"detailId":@"id"}];
-    
 }
+
 @end
 
 @implementation BDJEssenceTag
@@ -27,6 +27,7 @@
 +(JSONKeyMapper *)keyMapper{
     return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@{@"tagId":@"id"}];
 }
+
 @end
 
 @implementation BDJEssenceComment
@@ -39,21 +40,17 @@
 
 @implementation BDJEssenceUser
 
-
 @end
 
 @implementation BDJEssenceVideo
-
 
 @end
 
 @implementation BDJEssenceImage
 
-
 @end
 
 @implementation BDJEssenceAudio
-
 
 @end
 

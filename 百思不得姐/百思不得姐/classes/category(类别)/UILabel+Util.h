@@ -10,6 +10,5 @@
 
 @interface UILabel (Util)
 
-
 +(UILabel *)creatLabel:(NSString *)title textColor:(UIColor *)color font:(UIFont *)font;
 @end

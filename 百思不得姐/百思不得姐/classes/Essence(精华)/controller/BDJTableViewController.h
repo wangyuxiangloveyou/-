@@ -10,6 +10,6 @@
 
 @interface BDJTableViewController : BaseViewController
 
-//
 @property(nonatomic,copy)NSString *url;
+
 @end

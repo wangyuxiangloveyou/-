@@ -14,28 +14,24 @@ typedef  NS_ENUM(NSInteger,MenuType) {
 };
 
 @class BDJMenuViews;
+
 @protocol BDJMenuViewDelegate <NSObject>
 
 -(void)menuView:(BDJMenuViews *)menuView didClickBtnAtIndex:(NSInteger)index;
-
-
 //点击右边
 -(void)menuView:(BDJMenuViews *)menuView didClickRihgtBtn:(MenuType)type;
 @end
-
-
 
 
 @interface BDJMenuViews : UIView
 //
 //初始化方法
 /*
-@param array:菜单数据
+ @param array:菜单数据
  */
 -(instancetype)initWithItens:(NSArray *)array rightIcon:(NSString *)iconName rightSelectIcon:(NSString *)selectIconName;
 //枚举类型
 @property(nonatomic,assign)MenuType type;
-
 //代理属性
 @property(nonatomic,weak)id<BDJMenuViewDelegate>delegate ;
 //当前选中按钮
@@ -47,7 +43,6 @@ typedef  NS_ENUM(NSInteger,MenuType) {
 //菜单按钮
 @interface BDJMenuButton : UIControl
 
-
 -(instancetype)initWithTitle:(NSString *)title;
 
 //是否选中
@@ -56,5 +51,6 @@ typedef  NS_ENUM(NSInteger,MenuType) {
 //数据的属性
 @property(nonatomic,strong)BDJSubMenu *subMenu;
 //按钮序号
+
 @property(nonatomic,assign)NSInteger btnIndex;
 @end
